@@ -21,10 +21,22 @@ ros2_ws/build/
 ros2_ws/install/
 ros2_ws/log/
 
-# Large/generated project data
-data/
-models/
-logs/
+# Large/generated project data (repository root only)
+/data/
+/models/
+/logs/
 
 # Dev Container generated files
 .devcontainer/compose.hardware.yaml
+
+# Personal notes for Claude Code (do not publish)
+CLAUDE.local.md
+
+# Model weights / rosbag / videos
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.db3
+*.mcap
+*.mp4
