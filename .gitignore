@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# Environment / secrets
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ROS2 generated files
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Large/generated project data
+data/
+models/
+logs/
+
+# Dev Container generated files
+.devcontainer/compose.hardware.yaml

@@ -1,0 +1,32 @@
+{
+    "name": "Robot AI Development",
+
+    "initializeCommand": "./scripts/detect_gpu.sh",
+
+    "dockerComposeFile": [
+        "../compose.yaml",
+        "compose.hardware.yaml"
+    ],
+
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+
+    "remoteUser": "ubuntu",
+
+    "shutdownAction": "stopCompose",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/venv/bin/python",
+                "python.terminal.activateEnvironment": false
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-azuretools.vscode-docker",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    }
+}

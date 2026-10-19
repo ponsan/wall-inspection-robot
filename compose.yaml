@@ -1,0 +1,27 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+
+    working_dir: /workspace
+
+    volumes:
+      - .:/workspace
+
+      # WSL側の .venv をDocker内から隠す
+      # Dockerでは /opt/venv を使用する
+      - /workspace/.venv
+
+    environment:
+      PYTHONUNBUFFERED: "1"
+      UV_PROJECT_ENVIRONMENT: /opt/venv
+
+    ports:
+      - "8501:8501"
+      - "8888:8888"
+
+    stdin_open: true
+    tty: true
+
+    command: sleep infinity
