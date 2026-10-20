@@ -42,6 +42,7 @@ COPY --from=ghcr.io/astral-sh/uv:0.12.9 \
 # --------------------------------------------------
 # Python依存関係
 # --------------------------------------------------
+RUN uv venv --system-site-packages --python /usr/bin/python3 /opt/venv
 COPY pyproject.toml uv.lock README.md ./
 
 RUN uv sync \
