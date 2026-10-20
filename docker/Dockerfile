@@ -24,6 +24,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # --------------------------------------------------
+# Gazebo Harmonic + ROS 2 連携、RViz、描画確認ツール
+# --------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-jazzy-ros-gz \
+    ros-jazzy-rviz2 \
+    mesa-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# --------------------------------------------------
 # uv
 # バージョンを固定して再現性を確保
 # --------------------------------------------------
