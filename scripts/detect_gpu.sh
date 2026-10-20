@@ -2,7 +2,7 @@
 
 set -e
 
-OUTPUT=".devcontainer/compose.hardware.yaml"
+OUTPUT="compose.override.yaml"
 
 # WSL の中で動いているかを判定する
 if grep -qi microsoft /proc/version; then

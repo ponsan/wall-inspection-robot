@@ -27,7 +27,7 @@ ros2_ws/log/
 /logs/
 
 # Dev Container generated files
-.devcontainer/compose.hardware.yaml
+/compose.override.yaml
 
 # Personal notes for Claude Code (do not publish)
 CLAUDE.local.md
