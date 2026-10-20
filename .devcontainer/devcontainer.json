@@ -19,7 +19,9 @@
         "vscode": {
             "settings": {
                 "python.defaultInterpreterPath": "/opt/venv/bin/python",
-                "python.terminal.activateEnvironment": false
+                "python.terminal.activateEnvironment": false,
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true
             },
             "extensions": [
                 "ms-python.python",
