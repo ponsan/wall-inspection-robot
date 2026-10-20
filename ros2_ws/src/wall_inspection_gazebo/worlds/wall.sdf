@@ -16,7 +16,7 @@
     <!-- 太陽光：壁の表面（-x 側）を照らすように、+x 方向・下向きに当てる -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
-      <pose>0 0 10 0 0 0</pose>
+      <pose>0 0 3 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
       <direction>0.5 0.1 -0.9</direction>
@@ -43,16 +43,16 @@
       </link>
     </model>
 
-    <!-- 検査する壁：厚さ 0.2 m、幅 4 m、高さ 10 m。表面は x = 2.0 m の位置 -->
+    <!-- 検査する壁：厚さ 0.2 m、幅 4 m、高さ 3 m。表面は x = 2.0 m の位置 -->
     <model name="wall">
       <static>true</static>
-      <pose>2.1 0 5 0 0 0</pose>
+      <pose>2.1 0 1.5 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.2 4 10</size></box></geometry>
+          <geometry><box><size>0.2 4 3</size></box></geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.2 4 10</size></box></geometry>
+          <geometry><box><size>0.2 4 3</size></box></geometry>
           <material>
             <ambient>0.6 0.6 0.6 1</ambient>
             <diffuse>0.6 0.6 0.6 1</diffuse>
