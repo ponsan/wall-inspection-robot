@@ -65,8 +65,19 @@
     <include>
       <uri>model://crawler</uri>
       <name>crawler</name>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>1.92 0 1.0 0 -1.5708 0</pose>
     </include>
+
+    <!-- 負圧吸着の模擬。力はワールド座標系なので、壁の向き（+x）に合わせてワールド側に置く -->
+    <!-- 必要な力 25.3 kg × 9.81 / μ0.7 ≈ 355 N に余裕を見て 500 N -->
+    <plugin filename="gz-sim-apply-link-wrench-system" name="gz::sim::systems::ApplyLinkWrench">
+      <persistent>
+        <entity_name>crawler::base_link</entity_name>
+        <entity_type>link</entity_type>
+        <force>500 0 0</force>
+        <torque>0 0 0</torque>
+      </persistent>
+    </plugin>
 
   </world>
 </sdf>
