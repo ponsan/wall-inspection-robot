@@ -2,7 +2,7 @@
 <sdf version="1.9">
   <world name="wall_world">
 
-    <!-- 物理計算の設定：1ステップ 1ms、実時間と同じ速さで進める -->
+    <!-- 物理計算の設定：1 ms ステップ、実時間で進める -->
     <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
@@ -13,7 +13,7 @@
     <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
 
-    <!-- 太陽光：壁の表面（-x 側）を照らすように、+x 方向・下向きに当てる -->
+    <!-- 太陽光：壁の表面（-x 側）を照らす向き -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 3 0 0 0</pose>
@@ -43,7 +43,7 @@
       </link>
     </model>
 
-    <!-- 検査する壁：厚さ 0.2 m、幅 4 m、高さ 3 m。表面は x = 2.0 m の位置 -->
+    <!-- 壁の表面は x = 2.0（中心 2.1、厚さ 0.2） -->
     <model name="wall">
       <static>true</static>
       <pose>2.1 0 1.5 0 0 0</pose>
@@ -60,6 +60,13 @@
         </visual>
       </link>
     </model>
+
+    <!-- トラックの底はモデル原点より約7 cm下にあるため、少し浮かせて置く -->
+    <include>
+      <uri>model://crawler</uri>
+      <name>crawler</name>
+      <pose>0 0 0.1 0 0 0</pose>
+    </include>
 
   </world>
 </sdf>
