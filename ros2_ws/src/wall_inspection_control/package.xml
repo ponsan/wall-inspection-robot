@@ -3,7 +3,7 @@
 <package format="3">
   <name>wall_inspection_control</name>
   <version>0.0.0</version>
-  <description>TODO: Zigzag scanning control for the wall inspection robot</description>
+  <description>Zigzag scanning control for the wall inspection robot</description>
   <maintainer email="7042608+ponsan@users.noreply.github.com">ponsan</maintainer>
   <license>Apache-2.0</license>
 

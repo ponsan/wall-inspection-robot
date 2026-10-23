@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='ponsan',
     maintainer_email='7042608+ponsan@users.noreply.github.com',
-    description='TODO: Zigzag scanning control for the wall inspection robot',
+    description='Zigzag scanning control for the wall inspection robot',
     license='Apache-2.0',
     extras_require={
         'test': [
