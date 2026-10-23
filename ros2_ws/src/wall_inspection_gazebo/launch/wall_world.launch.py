@@ -4,6 +4,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
 
 
 def generate_launch_description():
@@ -24,4 +25,14 @@ def generate_launch_description():
         launch_arguments={'gz_args': f'-r {world}'}.items(),
     )
 
-    return LaunchDescription([set_model_path, gz_sim])
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[{
+            'config_file': os.path.join(pkg_share, 'config', 'bridge.yaml'),
+            'use_sim_time': True,
+        }],
+        output='screen',
+    )
+
+    return LaunchDescription([set_model_path, gz_sim, bridge])

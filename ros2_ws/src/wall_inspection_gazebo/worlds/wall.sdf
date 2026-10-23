@@ -61,7 +61,7 @@
       </link>
     </model>
 
-    <!-- トラックの底はモデル原点より約7 cm下にあるため、少し浮かせて置く -->
+    <!-- ピッチ −90° で前方を上、トラックの底を壁（表面 x = 2.0）に向ける -->
     <include>
       <uri>model://crawler</uri>
       <name>crawler</name>
