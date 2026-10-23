@@ -12,6 +12,7 @@ Changes from the original:
 - Removed the four flippers (links, joints and their TrackController plugins)
 - Removed the keyboard teleoperation plugins (TriggeredPublisher)
 - Removed the model pose (the position is set in the world file)
+- Added an OdometryPublisher plugin to publish the ground-truth pose
 -->
 <sdf version='1.7'>
     <model name='crawler'>
@@ -268,6 +269,13 @@ Changes from the original:
             <link>right_track</link>
             <min_velocity>-1.0</min_velocity>
             <max_velocity>1.0</max_velocity>
+        </plugin>
+
+        <!-- TrackedVehicle のオドメトリは旋回で大きくずれるため、真値を位置として使う -->
+        <plugin name="gz::sim::systems::OdometryPublisher" filename="gz-sim-odometry-publisher-system">
+            <dimensions>3</dimensions>
+            <odom_topic>/model/crawler/ground_truth</odom_topic>
+            <odom_publish_frequency>50</odom_publish_frequency>
         </plugin>
     </model>
 </sdf>
