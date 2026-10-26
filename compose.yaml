@@ -6,6 +6,9 @@ services:
 
     working_dir: /workspace
 
+    # DataLoader の並列読み込みが既定の 64 MB では足りないため
+    shm_size: "2gb"
+
     volumes:
       - .:/workspace
 
