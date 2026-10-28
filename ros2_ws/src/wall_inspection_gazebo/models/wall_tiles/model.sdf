@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="wall_tiles">
+    <static>true</static>
+    <link name="link">
+      <visual name="tile_00">
+        <pose>-0.001 1.500 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_00.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_01">
+        <pose>-0.001 1.000 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_01.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_02">
+        <pose>-0.001 0.500 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_02.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_03">
+        <pose>-0.001 -0.000 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_03.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_04">
+        <pose>-0.001 -0.500 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_04.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_05">
+        <pose>-0.001 -1.000 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_05.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_06">
+        <pose>-0.001 -1.500 0.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_06.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_07">
+        <pose>-0.001 1.500 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_07.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_08">
+        <pose>-0.001 1.000 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_08.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_09">
+        <pose>-0.001 0.500 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_09.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_10">
+        <pose>-0.001 -0.000 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_10.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_11">
+        <pose>-0.001 -0.500 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_11.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_12">
+        <pose>-0.001 -1.000 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_12.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_13">
+        <pose>-0.001 -1.500 1.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_13.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_14">
+        <pose>-0.001 1.500 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_14.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_15">
+        <pose>-0.001 1.000 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_15.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_16">
+        <pose>-0.001 0.500 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_16.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_17">
+        <pose>-0.001 -0.000 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_17.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_18">
+        <pose>-0.001 -0.500 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_18.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_19">
+        <pose>-0.001 -1.000 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_19.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_20">
+        <pose>-0.001 -1.500 1.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_20.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_21">
+        <pose>-0.001 1.500 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_21.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_22">
+        <pose>-0.001 1.000 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_22.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_23">
+        <pose>-0.001 0.500 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_23.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_24">
+        <pose>-0.001 -0.000 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_24.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_25">
+        <pose>-0.001 -0.500 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_25.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_26">
+        <pose>-0.001 -1.000 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_26.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_27">
+        <pose>-0.001 -1.500 2.000 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_27.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_28">
+        <pose>-0.001 1.500 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_28.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_29">
+        <pose>-0.001 1.000 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_29.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_30">
+        <pose>-0.001 0.500 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_30.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_31">
+        <pose>-0.001 -0.000 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_31.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_32">
+        <pose>-0.001 -0.500 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_32.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_33">
+        <pose>-0.001 -1.000 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_33.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="tile_34">
+        <pose>-0.001 -1.500 2.500 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane><normal>-1 0 0</normal><size>0.2 0.2</size></plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal>
+              <albedo_map>model://wall_tiles/materials/textures/tile_34.jpg</albedo_map>
+              <roughness>1</roughness>
+              <metalness>0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

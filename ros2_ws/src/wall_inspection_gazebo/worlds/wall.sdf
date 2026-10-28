@@ -61,6 +61,13 @@
       </link>
     </model>
 
+    <!-- 亀裂画像のタイル。モデルの原点を壁の表面（x = 2.0）に合わせる -->
+    <include>
+      <uri>model://wall_tiles</uri>
+      <name>wall_tiles</name>
+      <pose>2.0 0 0 0 0 0</pose>
+    </include>
+
     <!-- ピッチ −90° で前方を上、トラックの底を壁（表面 x = 2.0）に向ける -->
     <include>
       <uri>model://crawler</uri>
