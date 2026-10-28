@@ -23,4 +23,11 @@ def generate_launch_description():
         output='screen',
     )
 
-    return LaunchDescription([wall_world, scan_node])
+    inspector_node = Node(
+        package='wall_inspection_perception',
+        executable='inspector_node',
+        parameters=[{'use_sim_time': True}],
+        output='screen',
+    )
+
+    return LaunchDescription([wall_world, scan_node, inspector_node])

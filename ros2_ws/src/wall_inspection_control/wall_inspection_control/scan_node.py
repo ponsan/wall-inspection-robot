@@ -2,7 +2,7 @@ from collections import deque
 import signal
 import threading
 
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import PointStamped, Twist
 from nav_msgs.msg import Odometry
 import rclpy
 from rclpy.duration import Duration
@@ -43,6 +43,7 @@ class ScanNode(Node):
         self.dwell_start = None
 
         self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.inspect_pub = self.create_publisher(PointStamped, 'inspect_request', 10)
         self.create_subscription(Odometry, 'ground_truth', self.on_ground_truth, 10)
         self.create_timer(0.05, self.on_timer)
         self.get_logger().info(f'Scanning {self.num_goals} goals')
@@ -77,10 +78,10 @@ class ScanNode(Node):
                 f'reached at ({u:.3f}, {v:.3f})')
             self.state = 'DWELL'
             self.dwell_start = self.get_clock().now()
+            self.request_inspection(goal_u, goal_v)
 
     def dwell(self):
         """Wait at the goal, then move on to the next goal."""
-        # 停止中に検査する（10/29 にここで撮影と判定を行う）
         if self.get_clock().now() - self.dwell_start < self.dwell_time:
             return
         self.goals.popleft()
@@ -91,6 +92,16 @@ class ScanNode(Node):
         # 前の目標での回転・前進の状態を持ち越さない
         self.follower = GoalFollower()
         self.state = 'MOVE'
+
+    def request_inspection(self, goal_u, goal_v):
+        """Ask the inspector to inspect the goal where the robot has stopped."""
+        msg = PointStamped()
+        # 止まった時刻を入れ、検査側がこれより後の画像を使えるようにする
+        msg.header.stamp = self.dwell_start.to_msg()
+        msg.header.frame_id = 'wall'
+        msg.point.x = goal_u
+        msg.point.y = goal_v
+        self.inspect_pub.publish(msg)
 
     def publish_cmd(self, linear, angular):
         """Publish a velocity command."""
