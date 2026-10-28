@@ -13,6 +13,11 @@
     <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
 
+    <!-- カメラの画像を描画するため -->
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
     <!-- 太陽光：壁の表面（-x 側）を照らす向き -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
