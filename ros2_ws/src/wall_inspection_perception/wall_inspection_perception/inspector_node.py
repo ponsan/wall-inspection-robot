@@ -33,20 +33,29 @@ def image_to_array(msg):
 
 
 class InspectorNode(Node):
-    """Save a camera image at every inspection request from the scan node."""
+    """Save and classify a camera image at every inspection request."""
 
     def __init__(self):
         """Set up parameters, the output directory and the subscribers."""
         super().__init__('inspector_node')
         self.declare_parameter('output_dir', 'data/inspection')
         self.declare_parameter('settle_time', 0.3)
+        self.declare_parameter('weights', 'models/crack_resnet18/best.pt')
+        self.declare_parameter('threshold', 0.5)
 
         self.output_dir = Path(self.get_parameter('output_dir').value)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.settle_time = Duration(seconds=self.get_parameter('settle_time').value)
+        self.threshold = self.get_parameter('threshold').value
         self.csv_path = self.output_dir / 'captures.csv'
         with self.csv_path.open('w', newline='') as f:
-            csv.writer(f).writerow(['goal_u', 'goal_v', 'u', 'v', 'theta', 'image'])
+            csv.writer(f).writerow(
+                ['goal_u', 'goal_v', 'u', 'v', 'theta', 'image', 'crack_prob', 'crack'])
+
+        # torch は venv にしかないので、image_to_array のテストを system の Python で通すためにここで import する
+        from robot_ai.ml.crack_classifier import CrackClassifier
+        self.classifier = CrackClassifier(Path(self.get_parameter('weights').value))
+        self.get_logger().info(f'Crack classifier on {self.classifier.device}')
 
         self.pose = None
         self.request = None
@@ -76,14 +85,19 @@ class InspectorNode(Node):
         goal_u, goal_v = self.request.point.x, self.request.point.y
         self.request = None
         name = f'u{goal_u:+.2f}_v{goal_v:.2f}.png'
-        PILImage.fromarray(image_to_array(msg)).save(self.output_dir / name)
+        image = image_to_array(msg)
+        PILImage.fromarray(image).save(self.output_dir / name)
+        crack_prob = self.classifier.predict(image)
+        crack = int(crack_prob >= self.threshold)
 
         u, v, theta = self.pose
         with self.csv_path.open('a', newline='') as f:
             csv.writer(f).writerow(
-                [goal_u, goal_v, f'{u:.4f}', f'{v:.4f}', f'{theta:.4f}', name])
+                [goal_u, goal_v, f'{u:.4f}', f'{v:.4f}', f'{theta:.4f}', name,
+                 f'{crack_prob:.4f}', crack])
         self.get_logger().info(
-            f'Saved {name} at ({u:.3f}, {v:.3f}, {math.degrees(theta):.0f} deg)')
+            f'{name} at ({u:.3f}, {v:.3f}, {math.degrees(theta):.0f} deg): '
+            f'crack_prob {crack_prob:.3f} -> {"CRACK" if crack else "ok"}')
 
 
 def main(args=None):

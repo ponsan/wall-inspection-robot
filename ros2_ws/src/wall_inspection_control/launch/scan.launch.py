@@ -26,6 +26,7 @@ def generate_launch_description():
     inspector_node = Node(
         package='wall_inspection_perception',
         executable='inspector_node',
+        prefix='python3',
         parameters=[{'use_sim_time': True}],
         output='screen',
     )
