@@ -4,7 +4,7 @@
 各マスで止まってカメラで撮影し、亀裂判定 AI（ResNet18）で亀裂の有無を判定して、
 検査マップを RViz に表示します。最後に、壁の正解マップと比べて正解率を出します。
 
-- 動画：（提出後に追記）
+- 動画：https://youtu.be/ljaNR67aQqU
 
 ![検査結果と正解の比較](results/wall_map/result_map.png)
 
