@@ -9,6 +9,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     gazebo_share = get_package_share_directory('wall_inspection_gazebo')
+    control_share = get_package_share_directory('wall_inspection_control')
 
     wall_world = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -31,4 +32,20 @@ def generate_launch_description():
         output='screen',
     )
 
-    return LaunchDescription([wall_world, scan_node, inspector_node])
+    # /ground_truth はワールド座標の真値なので、crawler/odom は world と同じ位置に置く
+    world_to_odom = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        arguments=['--frame-id', 'world', '--child-frame-id', 'crawler/odom'],
+        parameters=[{'use_sim_time': True}],
+    )
+
+    rviz = Node(
+        package='rviz2',
+        executable='rviz2',
+        arguments=['-d', os.path.join(control_share, 'rviz', 'inspection.rviz')],
+        parameters=[{'use_sim_time': True}],
+    )
+
+    return LaunchDescription(
+        [wall_world, scan_node, inspector_node, world_to_odom, rviz])

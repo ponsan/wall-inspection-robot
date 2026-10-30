@@ -12,10 +12,13 @@ import rclpy
 from rclpy.duration import Duration
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile
 from rclpy.signals import SignalHandlerOptions
 from rclpy.time import Time
 from sensor_msgs.msg import Image
+from visualization_msgs.msg import MarkerArray
 from wall_inspection_control.wall_geometry import wall_pose_from_world
+from wall_inspection_perception.inspection_map import make_map_markers
 
 
 def image_to_array(msg):
@@ -42,6 +45,9 @@ class InspectorNode(Node):
         self.declare_parameter('settle_time', 0.3)
         self.declare_parameter('weights', 'models/crack_resnet18/best.pt')
         self.declare_parameter('threshold', 0.5)
+        self.declare_parameter('frame_id', 'world')
+        self.declare_parameter('wall_x', 2.0)
+        self.declare_parameter('cell_size', 0.4)
 
         self.output_dir = Path(self.get_parameter('output_dir').value)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -59,6 +65,11 @@ class InspectorNode(Node):
 
         self.pose = None
         self.request = None
+        self.results = []
+
+        # 後から起動した RViz にも最新の地図が届くように、最後の 1 件を残す
+        map_qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.map_pub = self.create_publisher(MarkerArray, 'inspection_map', map_qos)
 
         self.create_subscription(PointStamped, 'inspect_request', self.on_request, 10)
         self.create_subscription(Odometry, 'ground_truth', self.on_ground_truth, 10)
@@ -98,6 +109,13 @@ class InspectorNode(Node):
         self.get_logger().info(
             f'{name} at ({u:.3f}, {v:.3f}, {math.degrees(theta):.0f} deg): '
             f'crack_prob {crack_prob:.3f} -> {"CRACK" if crack else "ok"}')
+
+        self.results.append((goal_u, goal_v, crack_prob))
+        self.map_pub.publish(make_map_markers(
+            self.results, self.threshold,
+            self.get_parameter('frame_id').value,
+            self.get_parameter('wall_x').value,
+            self.get_parameter('cell_size').value))
 
 
 def main(args=None):
