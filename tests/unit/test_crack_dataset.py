@@ -1,6 +1,6 @@
-import pandas as pd
 import pytest
 
+pd = pytest.importorskip("pandas")
 torch = pytest.importorskip("torch")
 pytest.importorskip("torchvision")
 from PIL import Image  # noqa: E402
