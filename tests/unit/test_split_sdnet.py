@@ -1,6 +1,6 @@
-import pandas as pd
 import pytest
 
+pd = pytest.importorskip("pandas")
 pytest.importorskip("sklearn")
 from robot_ai.ml.split_sdnet import list_wall_images, split_by_photo  # noqa: E402
 
